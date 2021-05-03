@@ -34,7 +34,7 @@ func main() {
 	errChan := make(chan error)
 
 	var discoveryClient discover.DiscoveryClient
-	discoveryClient, err := discover.NewDiscoveryClient(*consulHost, *consulPort)
+	discoveryClient, err := discover.NewKitDiscoverClient(*consulHost, *consulPort)
 	if err != nil {
 		config.Logger.Println("Get Consul Client Failed")
 		os.Exit(-1)
@@ -72,6 +72,7 @@ func main() {
 			"clientId",
 			"clientSecret",
 			1800,
+			18000,
 			"http://127.0.0.1",
 			[]string{"password", "refresh_token"},
 		},

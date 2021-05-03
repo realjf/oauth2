@@ -1,6 +1,6 @@
 package service
 
-type Serivce interface {
+type Service interface {
 	SimpleData(username string) string
 	AdminData(username string) string
 
